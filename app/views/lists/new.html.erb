@@ -1,7 +1,8 @@
 <div class="container">
-  <h1>Add a list</h1>
+  <h1>Create a badass list</h1>
   <%= simple_form_for (@list) do |f| %>
     <%= f.input :name %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit 'Select', class: 'btn btn-danger' %>
   <% end %>
 </div>
