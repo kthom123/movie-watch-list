@@ -1,0 +1,5 @@
+<%= simple_form_for(@list) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :photo, as: :file %>
+  <p class="text-center"><%= f.submit class:"submit mt-3"%></p>
+<% end %>

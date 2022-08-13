@@ -1,13 +1,10 @@
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 16px;
-}
 
+// for index page -----------------------------------------
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 200px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,39 +14,98 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-decoration: none;
+  position: relative;
 }
 
-// Smallest device
-@media (min-width: 100px) and (max-width: 575px) {
+.card-category:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+  z-index: 100;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.remove {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+
+@media (max-width: 480px) {
   .cards {
+    display: grid;
     grid-template-columns: 1fr;
+    gap: 10px;
   }
 }
 
-// Small devices (landscape phones, 576px and up)
-@media (min-width: 576px) {
+@media (min-width: 850px) {
   .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (min-width: 768px) {
-  .cards {
+    display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
 }
 
-// Large devices (desktops, 992px and up)
-@media (min-width: 992px) {
+@media (min-width: 960px) {
   .cards {
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
   }
 }
 
-// Extra large devices (large desktops, 1200px and up)
-@media (min-width: 1200px) {
-  .cards {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
+
+// for show page -----------------------------------------
+.card-category a {
+  color: white;
+
+}
+
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border-radius: 5px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.card-product-infos h2 {
+  font-size: 24px;
 }

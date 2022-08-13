@@ -1,21 +1,31 @@
-<div class="container mt-3">
-  <h1><%= @list.name %></h1>
-
-  <div class="container mt-3 mb-3">
-    <div class="cards">
-      <% @list.bookmarks.each do |bookmark| %>
-        <%= bookmark.movie.title %>
-        <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
-        <%= bookmark.movie.overview %>
+<div class="show-banner mb-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= @list.photo.attached? ? cl_image_path(@list.photo.key) : asset_url("No image.png") %>')">
+  <div class="container d-flex align-items-center pt-3">
+    <%= link_to lists_path, class:"link-light" do %>
+      <h2>List></h2>
+    <% end %>
+    <h1 class="text-left text-white ms-3"><%= @list.name %></h1>
+  </div>
+</div>
+<div class="container">
+  <%= link_to new_list_bookmark_path(@list), class:"add" do %>
+    <i class="fas fa-plus text-white"></i>
+  <% end %>
+  <% @list.bookmarks.each do |bookmark| %>
+    <div class="card-product bg-light p-3">
+      <%# <img src="https://picsum.photos/300/200" /> %>
+      <%= image_tag bookmark.movie.poster_url, alt: "movie", width: 200 %>
+      <div class="card-product-infos">
+        <h2><%= bookmark.movie.title %></h2>
+        <p><%= bookmark.movie.overview %></p>
+        <h2 class="blockquote-footer mt-1"><%= bookmark.comment %></h2>
+        <h5 class="text-danger"><i class="fas fa-star mt-3 me-2 text-info"></i><%= bookmark.movie.rating %></h5>
+      </div>
+      <%= link_to bookmark_path(bookmark), method: :delete, class:"delete",  data: {confirm: "Are you sure?"} do %>
+        <i class="far fa-trash-alt fa-2x"></i>
       <% end %>
     </div>
-  </div>
-
-  <div class="container mt-5 mb-5">
-    <%= simple_form_for [@list, @bookmark] do |f| %>
-      <%= f.association :movie %>
-      <%= f.input :comment %>
-      <%= f.submit 'Add', class: 'btn btn-danger' %>
-    <% end %>
-  </div>
+  <% end %>
+  <%= link_to lists_path, class:"home" do %>
+    <p>All lists</p>
+  <% end %>
 </div>
