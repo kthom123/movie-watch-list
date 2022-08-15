@@ -15,8 +15,13 @@ legend ~ div.form-check:first-of-type {
   align-self: start;
 }
 
+.border {
+  border: 14px solid #d1dbe5 !important;
+  border-radius: 42px;
+}
+
 .submit {
-  background: #FE2905;
+  background: #2e74db8a;
   color: white;
   border-radius: 5px;
 }
