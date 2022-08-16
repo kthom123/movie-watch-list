@@ -1,24 +1,11 @@
-# README
+# Rails Watch List
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A movie watch list app made with Rails from front to back end. 
+You can add a list or category of movie and create a bookmark for each movie in that category.
 
-Things you may want to cover:
+![Screen Shot 2022-08-16 at 4 33 26 PM](https://user-images.githubusercontent.com/99015262/184838204-bf7c7eab-f70e-4481-9970-ca7c3fa9102a.png)
+![Screen Shot 2022-08-16 at 4 33 33 PM](https://user-images.githubusercontent.com/99015262/184838213-09ef0835-008b-496b-9876-6a1776db4a50.png)
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Check it out
+https://watch-list-kyle.herokuapp.com/
