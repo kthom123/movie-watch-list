@@ -1,4 +1,7 @@
 <div class="add-bookmark">
+  <%= link_to lists_path, class:"link-light" do %>
+    <h1>🍿 </h1>
+  <% end %>
   <div class="container text-white">
     <h1>Add Movie</h1>
     <%= simple_form_for [@list, @bookmark] do |f| %>
