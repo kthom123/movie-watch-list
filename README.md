@@ -1,4 +1,4 @@
-# Rails Watch List
+# Movie Watch List
 
 A movie watch list app made with Rails from front to back end. 
 You can add a list or category of movie and create a bookmark for each movie in that category.
